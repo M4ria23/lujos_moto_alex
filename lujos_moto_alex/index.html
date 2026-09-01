@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lujos Moto Alex</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+        }
+
+        header {
+            background: #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ff1e1e;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff1e1e;
+        }
+
+.inicio {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background-image: url("Fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+       .inicio h1 {
+    font-size: 65px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow:
+        3px 3px 8px #000,
+        0 0 20px rgba(255, 0, 0, 0.9);
+}
+
+.inicio p {
+    font-size: 24px;
+    max-width: 700px;
+    margin: auto;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.6;
+    text-shadow: 2px 2px 6px #000;
+}
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 32px;
+            background: #ff1e1e;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: #c90000;
+            box-shadow: 0 10px 25px rgba(255,0,0,0.35);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: #ff1e1e;
+        }
+
+        .nosotros {
+            background: #181818;
+        }
+
+        .nosotros p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .productos {
+            background: #101010;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1d1d1d;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+		.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    padding: 8px;
+}
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #ff1e1e;
+            box-shadow: 0 15px 30px rgba(255,0,0,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card p {
+            color: #aaa;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .precio {
+            color: #ff1e1e;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .inventario {
+            background: #181818;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #222;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        th {
+            background: #ff1e1e;
+            padding: 16px;
+        }
+
+        td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        tr:hover {
+            background: #292929;
+        }
+
+        .finanzas {
+            background: #101010;
+        }
+
+        .finanza-card {
+            text-align: center;
+            background: #1d1d1d;
+            padding: 35px 20px;
+            border-radius: 18px;
+        }
+
+        .finanza-card h3 {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .finanza-card strong {
+            font-size: 28px;
+            color: #ff1e1e;
+        }
+
+        .administracion {
+            background: #181818;
+        }
+
+        .administracion p {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            text-align: center;
+            line-height: 1.8;
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .contacto {
+            background: #101010;
+        }
+
+        form {
+            max-width: 650px;
+            margin: auto;
+            background: #1d1d1d;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            background: #111;
+            color: white;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff1e1e;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #ff1e1e;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #c90000;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 35px 20px;
+            color: #aaa;
+        }
+
+        footer h2 {
+            color: #ff1e1e;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .inicio h1 {
+                font-size: 42px;
+            }
+
+            .inicio p {
+                font-size: 19px;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">LUJOS MOTO ALEX</div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#inventario">Inventario</a></li>
+            <li><a href="#finanzas">Finanzas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="inicio" id="inicio">
+    <div>
+        <h1>Lujos Moto Alex</h1>
+
+        <p>
+            Repuestos, lujos y accesorios para llevar tu moto
+            al siguiente nivel.
+        </p>
+
+        <a href="#productos" class="btn">Ver productos</a>
+    </div>
+</section>
+
+<section class="nosotros" id="nosotros">
+    <div class="contenedor">
+        <h2 class="titulo">¿Quiénes somos?</h2>
+
+        <p>
+            Lujos Moto Alex es una empresa dedicada a la venta de
+            repuestos, accesorios y lujos para motocicletas.
+            Nuestro objetivo es brindar productos de calidad,
+            variedad y excelente atención a nuestros clientes.
+            Además, aplicamos procesos administrativos y contables
+            para controlar las ventas, los gastos, el inventario
+            y las ganancias del negocio.
+        </p>
+    </div>
+</section>
+
+<section class="productos" id="productos">
+    <div class="contenedor">
+        <h2 class="titulo">Nuestros productos</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="pastillas.jpg" alt="Pastillas de freno">
+                <h3>Pastillas de freno</h3>
+                <p>Excelente frenado y duración para tu motocicleta.</p>
+                <div class="precio">$35.000</div>
+            </div>
+
+            <div class="card">
+                <img src="bombillo-led.jpg" alt="Bombillo LED">
+                <h3>Bombillos LED</h3>
+                <p>Mayor iluminación y un estilo moderno.</p>
+                <div class="precio">$25.000</div>
+            </div>
+
+            <div class="card">
+                <img src="espejos.jpg" alt="Espejos">
+                <h3>Espejos deportivos</h3>
+                <p>Diseño moderno para personalizar tu moto.</p>
+                <div class="precio">$45.000</div>
+            </div>
+
+            <div class="card">
+                <img src="liquido-freno.jpg" alt="Líquido de frenos">
+                <h3>Líquido de frenos</h3>
+                <p>Ideal para el mantenimiento del sistema de frenos.</p>
+                <div class="precio">$6.000</div>
+            </div>
+
+            <div class="card">
+                <img src="maniguetas.jpg" alt="Maniguetas">
+                <h3>Maniguetas deportivas</h3>
+                <p>Diseño deportivo y excelente comodidad.</p>
+                <div class="precio">$40.000</div>
+            </div>
+
+        </div>
+    </div>
+</section
+
+<section class="inventario" id="inventario">
+    <div class="contenedor">
+        <h2 class="titulo">Control de inventario</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Pastillas de freno</td>
+                    <td>20</td>
+                    <td>$35.000</td>
+                    <td>Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>Bombillos LED</td>
+                    <td>15</td>
+                    <td>$25.000</td>
+                    <td>Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>Espejos deportivos</td>
+                    <td>10</td>
+                    <td>$45.000</td>
+                    <td>Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>Líquido de frenos</td>
+                    <td>30</td>
+                    <td>$6.000</td>
+                    <td>Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>Maniguetas deportivas</td>
+                    <td>12</td>
+                    <td>$40.000</td>
+                    <td>Disponible</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="finanzas" id="finanzas">
+    <div class="contenedor">
+        <h2 class="titulo">Resumen financiero</h2>
+
+        <div class="grid">
+
+            <div class="finanza-card">
+                <h3>Ventas del mes</h3>
+                <strong>$7.850.000</strong>
+            </div>
+
+            <div class="finanza-card">
+                <h3>Gastos</h3>
+                <strong>$4.200.000</strong>
+            </div>
+
+            <div class="finanza-card">
+                <h3>Ganancia</h3>
+                <strong>$3.650.000</strong>
+            </div>
+
+            <div class="finanza-card">
+                <h3>Valor del inventario</h3>
+                <strong>$5.300.000</strong>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="administracion">
+    <div class="contenedor">
+        <h2 class="titulo">Administración del negocio</h2>
+
+        <p>
+            Lujos Moto Alex lleva un control de las compras,
+            ventas, ingresos, gastos e inventarios.
+        </p>
+
+        <p>
+            Gracias a este proceso es posible identificar
+            cuáles productos tienen mayor salida, controlar
+            las existencias y conocer las ganancias obtenidas.
+        </p>
+
+        <p>
+            La contabilidad y la administración permiten tomar
+            mejores decisiones y contribuir al crecimiento
+            organizado del negocio.
+        </p>
+    </div>
+</section>
+
+<section class="contacto" id="contacto">
+    <div class="contenedor">
+        <h2 class="titulo">Contáctanos</h2>
+
+        <form onsubmit="enviarFormulario(event)">
+
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingresa tu nombre" required>
+
+            <label>Teléfono</label>
+            <input type="tel" placeholder="Ingresa tu número" required>
+
+            <label>Modelo de la moto</label>
+            <input type="text" placeholder="Ejemplo: NMAX 155">
+
+            <label>Producto que necesitas</label>
+            <input type="text" placeholder="Ejemplo: Espejos deportivos">
+
+            <label>Mensaje</label>
+            <textarea rows="5" placeholder="Escribe tu mensaje"></textarea>
+
+            <button type="submit">Enviar solicitud</button>
+
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h2>Lujos Moto Alex</h2>
+    <p>Repuestos, lujos y accesorios para motocicletas.</p>
+    <br>
+    <p>© 2026 Lujos Moto Alex - Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function enviarFormulario(event) {
+        event.preventDefault();
+        alert("¡Solicitud enviada correctamente a Lujos Moto Alex!");
+    }
+</script>
+
+</body>
+</html>
